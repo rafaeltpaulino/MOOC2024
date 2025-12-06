@@ -5,6 +5,7 @@
 #Paul
 #Paul
 # Write your solution here
+print('Exercicio 1')
 name = input("What is your name? ")
 print(name)
 print(name)
@@ -15,6 +16,7 @@ print(name)
 #What is your name? Paul
 #!Paul!Paul!
 # Write your solution here
+print('Exercicio 2')
 name = input("What is your name? ")
 print("!" + name + "!" + name + "!")
 
@@ -28,6 +30,7 @@ print("!" + name + "!" + name + "!")
 #91 Station Road
 #London EC05 6AW
 # Write your solution here
+print('Exercicio 3')
 givenName = input("Given name: ")
 familyName = input("Family name: ")
 streetAdress = input("Street adress: ")
@@ -44,6 +47,7 @@ print(cityAndPostalCode)
 #The 3rd part: dock
 #hickory-dickory-dock!
 # Fix the code
+print('Exercicio 4')
 part1 = input("The 1st part: ")
 part2 = input("The 2nd part: ")
 part3 = input("The 3rd part: ")
@@ -56,6 +60,7 @@ print(part1 + "-" + part2 + "-" + part3 + "!")
 #Mary is a valiant knight, born in the year 1572. One morning Mary woke up to an awful racket: a dragon was approaching the village. Only Mary could save the village's residents.
 #The story should change according to the input given by the user.
 # Write your solution here
+print('Exercicio 5')
 name = input("Please type in a name: ")
 year = input("Please type in a year: ")
 

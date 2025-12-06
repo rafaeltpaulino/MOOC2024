@@ -6,6 +6,7 @@
 #Please type in a number: 3
 #3 times 5 is 15
 # Write your solution here
+print('Exercicio 1')
 inputNumber = int(input('Please type in a number: '))
 timesNumber = 5
 
@@ -18,6 +19,7 @@ print(f'{inputNumber} times {timesNumber} is {inputNumber * timesNumber}')
 #Which year were you born? 1990
 #Hi Frances Fictitious, you will be 31 years old at the end of the year 2021
 # Write your solution here
+print('Exercicio 2')
 name = input('What is your name? ')
 birthYear = int(input('Which year were you born? '))
 currentYear = 2021
@@ -38,6 +40,7 @@ print(f'Hi {name}, you will be {currentYear - birthYear} years old at the end of
 #How many days? 7
 #Seconds in that many days: 604800
 # Write your solution here
+print('Exercicio 3')
 numberDays = int(input('How many days? '))
 secondsInDay = 24*3600
 
@@ -53,6 +56,7 @@ print(f'Seconds in that many days: {numberDays * secondsInDay}')
 #Please type in the third number: 5
 #The product is 30
 # Fix the code
+print('Exercicio 4')
 number = 1
 number *= int(input("Please type in the first number: "))
 number *= int(input("Please type in the second number: "))
@@ -70,6 +74,7 @@ print(f'The product is {number}')
 #The sum of the numbers: 10
 #The product of the numbers: 21
 # Write your solution here
+print('Exercicio 5')
 number1 = int(input('Number 1: '))
 number2 = int(input('Number 2: '))
 
@@ -87,6 +92,7 @@ print(f'The product of the numbers: {number1 * number2}')
 #Number 4: 7
 #The sum of the numbers is 16 and the mean is 4.0
 # Write your solution here
+print('Exercicio 6')
 number1 = int(input('Number 1: '))
 number2 = int(input('Number 2: '))
 number3 = int(input('Number 3: '))
@@ -112,6 +118,7 @@ print(f'The sum of the numbers is {sum} and the mean is {sum / 4}')
 #Daily: 5.5 euros
 #Weekly: 38.5 euros
 # Write your solution here
+print('Exercicio 7')
 timesEatCafeteriaWeek = int(input('How many times a week do you eat at the student cafeteria? '))
 priceStudentLunch = float(input('The price of a typical student lunch? '))
 oneySpentGroceriesWeek = float(input('How much money do you spend on groceries in a week? '))
@@ -138,6 +145,7 @@ print(f'Weekly: {(priceStudentLunch * timesEatCafeteriaWeek) + oneySpentGrocerie
 
 #Hint: the integer division operator // could come in handy here.
 # Write your solution here
+print('Exercicio 8')
 numberSudentsCourse = int(input('How many students on the course? '))
 sizeGroupStudents = int(input('Desired group size? '))
 res = numberSudentsCourse // sizeGroupStudents

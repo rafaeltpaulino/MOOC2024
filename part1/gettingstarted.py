@@ -2,6 +2,7 @@
 
 #1 Please write a program which prints out an emoticon: :-)
 # Write your solution here
+print('Exercicio 1')
 print(":-)")
 
 #2 "Seitsemän veljestä" is one of the first novels ever written in Finnish. It is the story of seven orphaned brothers learning to make their way in the world (read more on Wikipedia).
@@ -14,6 +15,7 @@ print(":-)")
 #print("Tuomas")
 #print("Timo")
 # Fix the code
+print('Exercicio 2')
 print("Aapo")
 print("Eero")
 print("Juhani")
@@ -30,6 +32,7 @@ print("Tuomas")
 #Merrily, merrily, merrily, merrily,
 #Life is but a dream.
 # Write your solution here
+print('Exercicio 3')
 print("Row, row, row your boat,")
 print("Gently down the stream.")
 print("Merrily, merrily, merrily, merrily,")
@@ -37,6 +40,7 @@ print("Life is but a dream.")
 
 #4 Please write a program which prints out the number of minutes in a year. Use Python code to perform the calculation, as in the previous code example.
 # Write your solution here
+print('Exercicio 4')
 print("Minutes in a year: ")
 print((24*60)*365)
 
@@ -49,4 +53,5 @@ print((24*60)*365)
 #Sample output
 #print("Hello there!")
 # Write your solution here
+print('Exercicio 5')
 print('print("Hello there!")')

@@ -40,7 +40,7 @@
 #Do remember to be extra careful when formatting printouts also in the future on this course. Some of the exercises have tests that require your output to be exactly as specified in the examples given. For example, please use actual whitespace characters in your code, instead of ASCII character codes for whitespace, or some such.
 
 # Write your solution here
-
+print('Exercicio 1')
 name = "Tim Tester"
 age = 20
 skill1 = "python"
@@ -87,6 +87,7 @@ print(f'I am looking for a job with a salary of {lower}-{upper} euros per month'
 #4 / 9 = 0.4444444444444444
 
 # Write your solution here
+print('Exercicio 2')
 x = 27
 y = 15
 sum = x + y 
@@ -122,6 +123,7 @@ print(f'{x} / {y} = {division}')
 #print(5 + 8 - 4)
 
 # Fix the code
+print('Exercicio 3')
 print(5, end='')
 print(" + ", end='')
 print(8, end='')
