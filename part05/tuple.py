@@ -263,3 +263,57 @@ if __name__ == '__main__':
     add_course(students, "Eliza", ("Introduction to Programming", 5))
     add_course(students, "Eliza", ("Introduction to Computer Science", 4))
     summary(students)
+
+'''
+This final exercise in this part is a relatively demanding problem solving task. It can be solved in many different ways. Even though this current section in the material covers tuples, tuples are not necessarily the best way to go about solving this.
+
+Please write a program which prints out a square of letters as specified in the examples below. You may assume there will be at most 26 layers.
+Sample output
+
+Layers: 3
+
+CCCCC
+CBBBC
+CBABC
+CBBBC
+CCCCC
+
+Sample output
+
+Layers: 4
+
+DDDDDDD
+DCCCCCD
+DCBBBCD
+DCBABCD
+DCBBBCD
+DCCCCCD
+DDDDDDD
+
+NB: this exercise doesn't ask you to write any functions, so you should not place any code within an if __name__ == "__main__" block.
+'''
+# Write your solution here
+layers = int(input('Layers: '))
+
+size = 2 * layers - 1
+center = layers - 1
+row = 0
+
+while row < size:
+    col = 0
+    line = ''
+    
+    while col < size:
+        distRow = abs(row - center)
+        distCol = abs(col - center)
+        
+        distance = max(distRow, distCol)
+        
+        character = chr(ord('A') + distance)
+        
+        line += character
+        
+        col += 1
+        
+    print(line)
+    row += 1
