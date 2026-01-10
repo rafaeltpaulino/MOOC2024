@@ -85,6 +85,7 @@ def readEntries():
             print(entry.rstrip())
             
 def main():
+    print('Exercício 2')
     print('1 - add an entry, 2 - read entries, 0 - quit')
     
     while True:
@@ -181,5 +182,40 @@ def filter_solutions():
     generateFile(incorrect, 'incorrect.csv')
           
 if __name__ == '__main__':
+    print('Exercício 3')
     filter_solutions()
-    
+
+
+'''
+Please write a function named store_personal_data(person: tuple), which takes a tuple containing some identifying information as its argument.
+
+The tuple contains the following elements:
+
+    Name (string)
+    Age (integer)
+    Height (float)
+
+This should be processed and written into the file people.csv. The file may already contain some data; the new entry goes to the end of the file. The data should be written in the format
+
+name;age;height
+
+Each entry should be on a separate line. If we call the function with the argument ("Paul Paulson", 37, 175.5), the function should write this line to the end of the file:
+
+Paul Paulson;37;175.5
+'''
+# Write your solution here
+def store_personal_data(person: tuple):
+    with open('people.csv', 'a') as people:
+        temp = ''
+        for data in person:
+            temp += f'{data};'
+        
+        temp = temp[:-1]
+        temp += '\n'
+        
+        people.write(temp)
+        
+if __name__ == '__main__':
+    print('Exercicio 4')
+    person = ("Paul Paulson", 37, 175.5)
+    store_personal_data(person)
