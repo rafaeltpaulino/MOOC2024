@@ -219,3 +219,175 @@ if __name__ == '__main__':
     print('Exercicio 4')
     person = ("Paul Paulson", 37, 175.5)
     store_personal_data(person)
+    
+'''
+The exercise template includes the file words.txt, which contains words in English.
+
+Please write a function named find_words(search_term: str). It should return a list containing all the words in the file which match the search term.
+
+The search term may include lowercase letters and the following wildcard characters:
+
+    A dot . means that any single character is acceptable in its place. For example, ca. would yield words like cat and car, p.ng would yield words like ping and pong, and .a.e would yield words like sane, care and late.
+    An asterisk * at the end of the search term means that any word which begins with the search term is acceptable. An asterisk at the beginning of the search term means that any word which ends with the search term is acceptable. For example, ca* would yield words like california, cat, caring and catapult, while *ane would yield words like crane, insane and aeroplane. There can only ever be a single asterisk in the search term.
+    If there are no wildcard characters in the search term, only words which match the search term exactly are returned.
+
+You may assume both wildcards are never used in the same search term.
+
+The words in the file are all written in lowercase. You may also assume the argument to the function will be in lowercase entirely.
+
+If no matching words are found, the function should return an empty list.
+
+Hint: the Pythons string methods startswith() and endswith() may be useful here. You can search for more information about them online.
+
+An example of the function in action:
+
+print(find_words("*vokes"))
+
+Sample output
+
+['convokes', 'equivokes', 'evokes', 'invokes', 'provokes', 'reinvokes', 'revokes']
+'''
+# Write your solution here
+import re
+
+def find_words(search_term: str) -> list:
+    searchSesult = []
+    
+    with open('words.txt') as words:
+        for word in words:
+            temp = word.rstrip()
+            
+            if search_term == temp:
+                searchSesult.append(temp)
+            
+            if search_term.startswith('*'):
+                if temp.endswith(search_term[1:]):
+                    searchSesult.append(temp)
+                    
+            if search_term.endswith('*'):
+                if temp.startswith(search_term[:-1]):
+                    searchSesult.append(temp)
+                        
+            if '.' in search_term:
+                if len(temp) == len(search_term):
+                    temp1 = search_term.replace('.', '\w')
+                    match = re.search(temp1, temp)
+                        
+                    if match != None:
+                        searchSesult.append(temp)
+                    
+    return searchSesult
+                    
+if __name__ == '__main__':
+    print('Exercício 6')
+    temp = find_words('.a.e')
+    print(temp)
+    
+'''
+Please write a program which functions as a dictionary. The user can type in new entries or look for existing entries.
+
+The program should work as follows:
+Sample output
+
+1 - Add word, 2 - Search, 3 - Quit
+Function: 1
+The word in Finnish: auto
+The word in English: car
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: 1
+The word in Finnish: roska
+The word in English: garbage
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: 1
+The word in Finnish: laukku
+The word in English: bag
+Dictionary entry added
+1 - Add word, 2 - Search, 3 - Quit
+Function: 2
+Search term: bag
+roska - garbage
+laukku - bag
+1 - Add word, 2 - Search, 3 - Quit
+Function: 2
+Search term: car
+auto - car
+1 - Add word, 2 - Search, 3 - Quit
+Function: 2
+Search term: laukku
+laukku - bag
+1 - Add word, 2 - Search, 3 - Quit
+Function: 3
+Bye!
+
+The dictionary entries should be written to a file called dictionary.txt. The program should first read the contents of the file. New entries are written to the end of the file whenever they are added to the dictionary.
+
+The format of the data stored in the dictionary is up to you.
+
+NB: the automatic tests for this exercise may change the contents of the file. If you want to keep its contents, first make a copy of the file under a different name.
+
+NB2: this exercise doesn't ask you to write any functions, so you should not place any code within an if __name__ == "__main__" block.
+'''
+# Write your solution here
+# Write your solution here
+def generateDict() -> dict:
+    res = {}
+    
+    with open('dictionary.txt') as dictionary:
+        for entry in dictionary:
+            if entry != '\n':
+                temp = entry.split(';')
+                temp[1] = temp[1].rstrip()
+                
+                res[temp[0]] = temp[1]
+                
+    return res
+    
+def addWord(word : str, translation : str):
+    dictionary = generateDict()
+    
+    if word in dictionary:
+        print(f'{word} already in the dictionary')
+    else:
+        with open('dictionary.txt', 'a') as dictFile:
+            temp = f'{word};{translation + '\n'}'
+            dictFile.write(temp)
+            
+            print('Dictionary entry added')
+
+def searchWord(word : str):
+    dictionary = generateDict()
+    wordLower = word.lower()
+    
+    for k, v in dictionary.items():
+        if wordLower in k or v:
+            print(f'{k} - {v}')
+                
+def useDictionary():
+    while True:
+        print('1 - Add word, 2 - Search, 3 - Quit')
+        option = input('Function: ')
+        
+        match option:
+            case '1':
+                finnishWord = input('The word in Finnish: ')
+                translation = input('The word in English: ')
+                addWord(finnishWord, translation)
+                
+            case '2':
+                word = input('Search term: ')
+                searchWord(word)
+                
+            case '3':
+                print('Bye!')
+                return
+
+            case _:
+                print('Invalid option.')
+
+def main():
+    print('Exercício 7')
+    useDictionary()
+    
+main()
